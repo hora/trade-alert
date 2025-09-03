@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Form from './Form';
 
 function App() {
+  const TEAM_NAMES = [
+    "Already Drafteds",
+    "Angry Bears",
+    "Bedard Should've Been Mine",
+    "Bodacious Bruins",
+    "Burnaby Max's",
+    "California Shawnas",
+    "HUGHES DO YOU THINK YOU ARE? I AM!",
+    "Juuse Juicy",
+    "McDigTheFuckIns💎",
+    "Put It In Seider",
+    "Super Makario",
+    "TBD",
+    "Toronto Gringos",
+    "🏠 Vancouver Specials",
+  ];
+
+  const [teamA, setTeamA] = useState("🏠 Vancouver Specials");
+  const [teamB, setTeamB] = useState("Already Drafteds");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form
+        teams={TEAM_NAMES}
+        teamA={teamA}
+        setTeamA={setTeamA}
+        teamB={teamB}
+        setTeamB={setTeamB}
+      />
     </div>
   );
 }
