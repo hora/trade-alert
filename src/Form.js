@@ -23,7 +23,7 @@ export default Form;
 
 function FormTeam({team, teams, onSelectTeam, selectedTeam}) {
   return (
-    <div className="team">
+    <div className="FormTeam">
       <h2>Team {team} Assets</h2>
       <label htmlFor="team-a-name-select">Choose a team:</label>
 
@@ -35,9 +35,9 @@ function FormTeam({team, teams, onSelectTeam, selectedTeam}) {
         }
         defaultValue={selectedTeam}
       >
-        {teams.map((t, i) => {
+        {Object.entries(teams).map(([teamName, team], i) => {
           const key = "team-name-" + i;
-          return (<option key={key} value={t}>{t}</option>);
+          return (<option key={key} value={teamName}>{teamName}</option>);
         })}
       </select>
       <input className="team-asset" id="player1-a" type="text" placeholder="Player 1 from Team A"/>
